@@ -1,3 +1,6 @@
 [submodule "third_party/manif"]
 	path = third_party/manif
 	url = https://github.com/artivis/manif.git
+[submodule "third_party/eigen"]
+	path = third_party/eigen
+	url = https://gitlab.com/libeigen/eigen.git
