@@ -1,5 +1,5 @@
 #~/bin/bash
-i
+
 #
 # third party / dependencies
 #
@@ -7,39 +7,43 @@ i
 
 ROOT_DIR=`pwd`
 BUILD_DIR=${ROOT_DIR}/build
-
-
-build_third_party()
-{
-
 THIRD_PARTY=${ROOT_DIR}/third_party
 
-MANIF_DIR=${THIRD_PARTY}/manif
-EIGEN_DIR=${THIRD_PARTY}/eigen
 
 CMAKE_PREFIX_PATH=${ROOT_DIR}/install
 CMAKE_INSTALL_PATH=${ROOT_DIR}/install
-
 CMAKE_ARGS="-DCMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH} -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PATH}"
 
-# eigen
-echo "building eigen"
-mkdir -p $EIGEN_DIR/build
-cd $EIGEN_DIR/build
+build_third_party()
+{
+TARGET_DIR=$1
+
+
+
+# target build
+mkdir -p $TARGET_DIR/build
+cd $TARGET_DIR/build
 echo "cmake command: "
 echo "cmake ${CMAKE_ARGS} ${EIGEN_DIR}"
-cmake ${CMAKE_ARGS} ${EIGEN_DIR}
+cmake ${CMAKE_ARGS} ${TARGET_DIR}
 make install
-
-# manif
-mkdir -p $MANIF_DIR/build
-cd $MANIF_DIR/build
-cmake ${CMAKE_ARGS} ${MANIF_DIR}
-make install
-
 }
 
-#build_third_party
+
+build_third_party_tiems()
+{
+
+MANIF_DIR=${THIRD_PARTY}/manif
+EIGEN_DIR=${THIRD_PARTY}/eigen
+GTEST_DIR=${THIRD_PARTY}/googletest
+
+build_third_party $MANIF_DIR
+build_third_party $EIGEN_DIR
+build_third_party $GTEST_DIR
+}
+
+#build_third_party_items
+
 
 #
 # project
@@ -47,5 +51,6 @@ make install
 
 mkdir -p $BUILD_DIR
 cd $BUILD_DIR
+echo "running command  cmake ${CMAKE_ARGS} .."
 cmake ${CMAKE_ARGS} ..
 make
