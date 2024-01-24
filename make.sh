@@ -36,8 +36,7 @@ make install
 # project
 #
 
-exit
-
+mkdir -p $BUILD_DIR
 cd $BUILD_DIR
 cmake ${CMAKE_ARGS} ..
 make install
