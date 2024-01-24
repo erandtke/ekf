@@ -4,8 +4,14 @@ i
 # third party / dependencies
 #
 
+
 ROOT_DIR=`pwd`
 BUILD_DIR=${ROOT_DIR}/build
+
+
+build_third_party()
+{
+
 THIRD_PARTY=${ROOT_DIR}/third_party
 
 MANIF_DIR=${THIRD_PARTY}/manif
@@ -31,6 +37,9 @@ cd $MANIF_DIR/build
 cmake ${CMAKE_ARGS} ${MANIF_DIR}
 make install
 
+}
+
+#build_third_party
 
 #
 # project
@@ -39,4 +48,4 @@ make install
 mkdir -p $BUILD_DIR
 cd $BUILD_DIR
 cmake ${CMAKE_ARGS} ..
-make install
+make

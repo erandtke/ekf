@@ -2,11 +2,20 @@
 # sensors
 #
 
-add_library(ekf_sensors INTERFACE include)
-ALIAS(ekf::sensors ekf_sensors)
+add_library(ekf_sensors INTERFACE)
+add_library(ekf::sensors ALIAS ekf_sensors)
 
-add_library(ekf_ekf INTERFACE include)
-ALIAS(ekf::ekf ekf_ekf)
+target_include_directories(ekf_sensors INTERFACE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    ) 
 
+#
+# ekf
+#
 
+add_library(ekf_ekf INTERFACE)
+add_library(ekf::ekf ALIAS ekf_ekf)
 
+target_include_directories(ekf_ekf INTERFACE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    )
