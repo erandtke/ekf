@@ -19,3 +19,6 @@ add_library(ekf::ekf ALIAS ekf_ekf)
 target_include_directories(ekf_ekf INTERFACE
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     )
+
+
+add_subdirectory(test)
