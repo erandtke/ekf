@@ -1,4 +1,8 @@
+#include "ekf/ekf.hh"
+
 #include <gtest/gtest.h>
+
+#include <memory>
 
 namespace ekf::test
 {
