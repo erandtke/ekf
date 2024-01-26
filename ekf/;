@@ -10,16 +10,16 @@ namespace ekf::test
 class EkfTestFixture : public testing::Test
 {
 protected:
-    void SetUp()
+    void Setup() override
     {
-        ekfInstance = std::make_unique<::ekf::ekf>(::ekf::ekf{});
+        ekf = std::make_unique<ekf::ekf>();
     }
 
-    std::unique_ptr<::ekf::ekf> ekfInstance;
+    std::unique_ptr<ekf::ekf> ekf;
 
 };
 
-TEST_F(EkfTestFixture, ekf_ctor)
+TEST_F(ekf, ekf_ctor)
 {
 // test fixture constructed, it "works"
 }

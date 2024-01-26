@@ -14,6 +14,6 @@ namespace ekf
 {
 class ekf
 {
-    virtual manif::SE_2_3 add_sensor(const sensor_t &sensor) = 0;
-}
+    manif::SE_2_3d add_sensor(const isensor &sensor);
+};
 }

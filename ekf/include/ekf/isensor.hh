@@ -11,5 +11,5 @@ namespace ekf
 struct isensor
 {
     virtual std::chrono::steady_clock GetTimestamp() = 0;
-}
+};
 }
