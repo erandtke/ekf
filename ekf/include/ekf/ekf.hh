@@ -7,13 +7,13 @@
 
 #include "manif/SE_2_3.h"
 
-#include "ekf/isensor.hh"
+#include "ekf/sensors.hh"
 
 
 namespace ekf
 {
 class ekf
 {
-    manif::SE_2_3d add_sensor(const isensor &sensor);
+    manif::SE_2_3d add_sensor(const sensor_t &sensor);
 };
 }

@@ -26,5 +26,4 @@ target_include_directories(ekf_ekf PUBLIC
     $<BUILD_INTERFACE:${CMAKE_PREFIX_PATH}/include>
     )
 
-
 add_subdirectory(test)
