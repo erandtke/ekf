@@ -15,4 +15,6 @@ target_include_directories(ekf_ekf PUBLIC
     $<BUILD_INTERFACE:${CMAKE_PREFIX_PATH}/include>
     )
 
+target_link_libraries(ekf_ekf INTERFACE ekf::sensors)
+
 add_subdirectory(test)

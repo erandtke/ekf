@@ -7,7 +7,7 @@
 
 #include "manif/SE2.h"
 
-#include "ekf/sensors.hh"
+#include "sensors/sensors.hh"
 
 
 namespace ekf
