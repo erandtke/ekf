@@ -20,6 +20,6 @@ using sensor_t = std::variant<pose_measurement>;
 struct pose_measurement
 {
     manif::SE3d pose;
-    std::chrono::steady_clock timestamp;
+    std::chrono::steady_clock::time_point timestamp;
 };
 }
