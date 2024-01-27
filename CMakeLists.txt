@@ -5,4 +5,4 @@ project(ekf)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED On)
 
-add_subdirectory(ekf)
+add_subdirectory(source)
