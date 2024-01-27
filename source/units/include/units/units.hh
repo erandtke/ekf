@@ -43,5 +43,8 @@ unit<L,A,T> operator-(const unit<L1,A1,T1> &lhs, const unit<L1,A1,T1> &rhs)
 using meters = unit<1,0,0>;
 using radians = unit<0,1,0>;
 using seconds = unit<0,0,1>;
+using hertz = unit<0,0,-1>;
+using mps = unit<1,0,-1>;
+using rps = unit<0,1,-1>;
 
 }

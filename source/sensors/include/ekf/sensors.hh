@@ -6,6 +6,8 @@
 #pragma once
 
 
+#inlude "units/units.hh"
+
 #include "manif/SE3.h"
 
 #include <chrono>
@@ -15,7 +17,7 @@ namespace ekf
 {
 struct pose_measurement;
 
-using sensor_t = std::variant<pose_measurement>;
+using sensor_t = std::variant<pose_measurement, control_input>;
 
 struct pose_measurement
 {
@@ -25,5 +27,7 @@ struct pose_measurement
 
 struct control_input
 {
+    mps linear_velocity;
+    rps angula_velocity;
 };
 }
