@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include "manif/SE_2_3.h"
+#include "manif/SE2.h"
 
 #include "ekf/sensors.hh"
 
@@ -14,6 +14,12 @@ namespace ekf
 {
 class ekf
 {
-    manif::SE_2_3d add_sensor(const sensor_t &sensor);
+public:
+    ekf();
+    manif::SE2d add_sensor(const sensor_t &sensor);
+private:
+    manif::SE2d pose_;
 };
+
+
 }

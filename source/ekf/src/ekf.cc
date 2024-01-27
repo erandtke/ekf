@@ -3,9 +3,15 @@
 namespace ekf
 {
 
-manif::SE_2_3d ekf::add_sensor(const sensor_t &sensor)
+ekf::ekf()
+    :
+        pose_(manif::SE2d::Identity())
 {
-    return manif::SE_2_3d{};
+}
+
+manif::SE2d ekf::add_sensor(const sensor_t &sensor)
+{
+    return manif::SE2d::Identity();
 }
 
 }
