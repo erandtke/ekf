@@ -3,10 +3,6 @@
 
 namespace ekf
 {
-namespace
-{
-SE2d apply(
-}
 
 ekf::ekf()
     :
