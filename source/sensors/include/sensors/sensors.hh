@@ -6,7 +6,7 @@
 #pragma once
 
 
-#inlude "units/units.hh"
+#include "units/units.hh"
 
 #include "manif/SE3.h"
 
@@ -16,18 +16,24 @@
 namespace ekf
 {
 struct pose_measurement;
+struct control_input;
 
 using sensor_t = std::variant<pose_measurement, control_input>;
 
-struct pose_measurement
+template<class T>
+struct sensor_base
 {
-    manif::SE3d pose;
     std::chrono::steady_clock::time_point timestamp;
 };
 
-struct control_input
+struct pose_measurement : public sensor_base<pose_measurement>
 {
-    mps linear_velocity;
-    rps angula_velocity;
+    manif::SE3d pose;
+};
+
+struct control_input : public sensor_base<control_input>
+{
+    units::mps linear_velocity;
+    units::rps angular_velocity;
 };
 }

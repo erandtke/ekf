@@ -14,7 +14,7 @@ class unit
 public:
     unit(double val) : value(val){};
     double value;
-}
+};
 
 template<int L, int A, int T>
 unit<L,A,T> operator+(const unit<L,A,T> &lhs, const unit<L,A,T> &rhs)
@@ -29,13 +29,13 @@ unit<L,A,T> operator-(const unit<L,A,T> &lhs, const unit<L,A,T> &rhs)
 }
 
 template<int L1, int A1, int T1, int L2, int A2, int T2>
-unit<L,A,T> operator*(const unit<L1,A1,T1> &lhs, const unit<L1,A1,T1> &rhs)
+unit<L1+L2,A1+A2,T1+T2> operator*(const unit<L1,A1,T1> &lhs, const unit<L1,A1,T1> &rhs)
 {
     return unit<L1+L2,A1+A2,T1+T2>(lhs.value*rhs.value);
 }
 
 template<int L1, int A1, int T1, int L2, int A2, int T2>
-unit<L,A,T> operator-(const unit<L1,A1,T1> &lhs, const unit<L1,A1,T1> &rhs)
+unit<L1-L2,A1-A2,T1-T2> operator/(const unit<L1,A1,T1> &lhs, const unit<L1,A1,T1> &rhs)
 {
     return unit<L1-L2,A1-A2,T1-T2>(lhs.value/rhs.value);
 }
