@@ -1,6 +1,5 @@
 /**
- * @file iekf
- * ekf interface
+ * @file ekf.hh
  */
 
 #pragma once
@@ -9,9 +8,9 @@
 
 #include "sensors/sensors.hh"
 
-
 namespace ekf
 {
+
 class ekf
 {
 public:
@@ -20,6 +19,5 @@ public:
 private:
     manif::SE2d pose_;
 };
-
 
 }
