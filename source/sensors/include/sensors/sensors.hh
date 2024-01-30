@@ -35,5 +35,6 @@ struct control_input : public sensor_base<control_input>
 {
     units::mps linear_velocity;
     units::rps angular_velocity;
+    std::chrono::duration<double> duration;
 };
 }
