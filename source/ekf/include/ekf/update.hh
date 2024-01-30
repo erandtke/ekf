@@ -13,11 +13,6 @@
 namespace ekf
 {
 
-std::tuple<manif::SE2d> update(const control_input &this_sensor, std::chrono::s)
-{
-
-}
-
-struct control_input : public sensor_base<control_input>
+manif::SE2d update(const control_input &this_sensor, manif::SE2d pose);
 
 }
